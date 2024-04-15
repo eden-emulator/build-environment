@@ -1,4 +1,4 @@
-FROM ubuntu:23.04
+FROM ubuntu:24.04
 
 ENV DEBIAN_FRONTEND=noninteractive
 
@@ -11,7 +11,7 @@ RUN apt-get install -y \
     build-essential \
     ccache \
     clang \
-    clang-format-15 \
+    clang-format-18 \
     cmake \
     curl \
     git \
@@ -38,10 +38,3 @@ RUN apt-get install -y \
     glslang-tools \
     # Other libraries
     libsdl2-dev
-
-# Install Transifex client
-RUN curl -O -L https://github.com/transifex/cli/releases/latest/download/tx-linux-amd64.tar.gz && \
-    tar xf tx-linux-amd64.tar.gz tx && \
-    mv tx /usr/bin/tx && \
-    rm tx-linux-amd64.tar.gz
-
