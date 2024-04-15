@@ -14,16 +14,24 @@ RUN apt-get install -y \
     clang-format-18 \
     cmake \
     curl \
+    file \
     git \
     lld \
-    llvm \
+    llvm-18 \
     ninja-build \
-    p7zip-full \
     python3-pip \
     software-properties-common \
     unzip \
     wget \
     zip \
+    # FFmpeg
+    ffmpeg \
+    libavcodec-dev \
+    libavdevice-dev \
+    libavfilter-dev \
+    libavformat-dev \
+    libswresample-dev \
+    libswscale-dev \
     # Qt 6
     qt6-base-dev \
     qt6-base-private-dev \
@@ -38,3 +46,11 @@ RUN apt-get install -y \
     glslang-tools \
     # Other libraries
     libsdl2-dev
+
+# Download tools for building AppImages
+RUN wget https://github.com/linuxdeploy/linuxdeploy/releases/download/continuous/linuxdeploy-x86_64.AppImage
+RUN wget https://github.com/linuxdeploy/linuxdeploy-plugin-qt/releases/download/continuous/linuxdeploy-plugin-qt-x86_64.AppImage
+RUN wget https://github.com/linuxdeploy/linuxdeploy-plugin-checkrt/releases/download/continuous/linuxdeploy-plugin-checkrt-x86_64.sh
+RUN chmod a+x linuxdeploy-x86_64.AppImage
+RUN chmod a+x linuxdeploy-plugin-qt-x86_64.AppImage
+RUN chmod a+x linuxdeploy-plugin-checkrt-x86_64.sh
