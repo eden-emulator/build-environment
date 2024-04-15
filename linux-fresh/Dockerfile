@@ -10,7 +10,7 @@ RUN apt-get install -y \
     # Tools
     build-essential \
     ccache \
-    clang \
+    clang-18 \
     clang-format-18 \
     cmake \
     curl \
