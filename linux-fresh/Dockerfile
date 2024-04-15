@@ -1,9 +1,9 @@
 FROM ubuntu:23.04
-LABEL maintainer="citraemu"
+
 ENV DEBIAN_FRONTEND=noninteractive
 
-# Create a user account citra (UID 1027) that the container will run as
-RUN useradd -m -u 1027 -s /bin/bash citra 
+# Create a user account lime (UID 1027) that the container will run as
+RUN useradd -m -u 1027 -s /bin/bash lime
 
 RUN apt-get update && apt-get -y full-upgrade
 RUN apt-get install -y \

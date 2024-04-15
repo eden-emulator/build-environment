@@ -1,12 +1,11 @@
 FROM ubuntu:20.04
-LABEL maintainer="citraemu"
 
 ENV DEBIAN_FRONTEND=noninteractive
 
-# Create a user account citra (UID 1027) that the container will run as
-RUN useradd -m -u 1027 -s /bin/bash citra
+# Create a user account lime (UID 1027) that the container will run as
+RUN useradd -m -u 1027 -s /bin/bash lime
 
-# Update system, install PPAs and install packages for building Citra.
+# Update system, install PPAs and install packages for building Lime3DS.
 RUN apt-get update && apt-get full-upgrade -y
 RUN apt-get install -y software-properties-common lsb-release
 RUN add-apt-repository -y ppa:savoury1/build-tools
