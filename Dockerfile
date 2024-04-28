@@ -1,11 +1,20 @@
-FROM ubuntu:24.04
+FROM debian:12-slim
 
 ENV DEBIAN_FRONTEND=noninteractive
 
 # Create a user account lime (UID 1027) that the container will run as
 RUN useradd -m -u 1027 -s /bin/bash lime
 
+# Update repos + upgrade system
 RUN apt-get update && apt-get -y full-upgrade
+
+# Add LLVM repo
+RUN echo "deb http://apt.llvm.org/bookworm/ llvm-toolchain-bookworm-18 main" >> /etc/apt/sources.list
+RUN apt-get install -y gnupg wget
+RUN wget -O - https://apt.llvm.org/llvm-snapshot.gpg.key | apt-key add -
+RUN apt-get update
+
+# Install package dependencies
 RUN apt-get install -y \
     # Tools
     build-essential \
@@ -16,13 +25,13 @@ RUN apt-get install -y \
     curl \
     file \
     git \
+    libc++-18-dev \
     lld \
     llvm-18 \
     ninja-build \
     python3-pip \
     software-properties-common \
     unzip \
-    wget \
     zip \
     # FFmpeg
     ffmpeg \
