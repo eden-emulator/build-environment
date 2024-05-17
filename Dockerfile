@@ -56,6 +56,9 @@ RUN apt-get install -y \
     # Other libraries
     libsdl2-dev
 
+# Download Transifex client
+RUN curl -o- https://raw.githubusercontent.com/transifex/cli/master/install.sh | bash
+
 # Download tools for building AppImages
 RUN wget https://github.com/linuxdeploy/linuxdeploy/releases/download/continuous/linuxdeploy-x86_64.AppImage
 RUN wget https://github.com/linuxdeploy/linuxdeploy-plugin-qt/releases/download/continuous/linuxdeploy-plugin-qt-x86_64.AppImage
