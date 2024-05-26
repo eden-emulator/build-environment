@@ -58,6 +58,7 @@ RUN apt-get install -y \
 
 # Download Transifex client
 RUN curl -o- https://raw.githubusercontent.com/transifex/cli/master/install.sh | bash
+RUN mv /tx /usr/bin/
 
 # Download tools for building AppImages
 RUN wget https://github.com/linuxdeploy/linuxdeploy/releases/download/continuous/linuxdeploy-x86_64.AppImage
