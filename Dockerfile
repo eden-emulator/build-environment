@@ -30,6 +30,7 @@ RUN apt-get install -y \
     llvm-18 \
     ninja-build \
     python3-pip \
+    ruby \
     software-properties-common \
     unzip \
     zip \
