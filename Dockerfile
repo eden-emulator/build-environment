@@ -50,7 +50,6 @@ RUN apt-get install -y \
     qt6-l10n-tools \
     qt6-tools-dev \
     qt6-tools-dev-tools \
-    qt6-wayland \
     libgl-dev \
     # glslang
     glslang-dev \
