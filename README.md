@@ -1,3 +1,3 @@
-# build-environments
-Dockerfile entries used for building Lime3DS binaries.
-https://hub.docker.com/r/opensauce04/lime3ds-build
+# build-environment
+Dockerfile for the Docker environment used to build Azahar binaries and perform other CI/CD tasks.
+https://hub.docker.com/r/opensauce04/azahar-build-environment
