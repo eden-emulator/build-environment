@@ -1,4 +1,4 @@
-FROM debian:12-slim
+FROM debian:trixie
 
 ENV DEBIAN_FRONTEND=noninteractive
 
@@ -7,12 +7,6 @@ RUN useradd -m -u 1027 -s /bin/bash lime
 
 # Update repos + upgrade system
 RUN apt-get update && apt-get -y full-upgrade
-
-# Add LLVM repo
-RUN echo "deb http://apt.llvm.org/bookworm/ llvm-toolchain-bookworm-18 main" >> /etc/apt/sources.list
-RUN apt-get install -y gnupg wget
-RUN wget -O - https://apt.llvm.org/llvm-snapshot.gpg.key | apt-key add -
-RUN apt-get update
 
 # Install package dependencies
 RUN apt-get install -y \
@@ -31,7 +25,7 @@ RUN apt-get install -y \
     ninja-build \
     python3-pip \
     ruby \
-    software-properties-common \
+    wget \
     unzip \
     zip \
     # FFmpeg
