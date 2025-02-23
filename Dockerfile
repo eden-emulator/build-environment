@@ -13,15 +13,15 @@ RUN apt-get install -y \
     # Tools
     build-essential \
     ccache \
-    clang-18 \
-    clang-format-18 \
+    clang-19 \
+    clang-format-19 \
     cmake \
     curl \
     file \
     git \
-    libc++-18-dev \
+    libc++-19-dev \
     lld \
-    llvm-18 \
+    llvm-19 \
     ninja-build \
     python3-pip \
     ruby \
