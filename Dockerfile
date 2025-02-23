@@ -3,7 +3,7 @@ FROM debian:trixie
 ENV DEBIAN_FRONTEND=noninteractive
 
 # Create a user account lime (UID 1027) that the container will run as
-RUN useradd -m -u 1027 -s /bin/bash lime
+RUN useradd -m -u 1027 -s /bin/bash citra
 
 # Update repos + upgrade system
 RUN apt-get update && apt-get -y full-upgrade
