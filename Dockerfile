@@ -51,6 +51,11 @@ RUN apt-get install -y \
     # Other libraries
     libsdl2-dev
 
+# Create Clang symlinks
+RUN ln -s /usr/bin/clang-19 /usr/bin/clang
+RUN ln -s /usr/bin/clang++-19 /usr/bin/clang++
+RUN ln -s /usr/bin/clang-format-19 /usr/bin/clang-format
+
 # Download Transifex client
 RUN curl -o- https://raw.githubusercontent.com/transifex/cli/master/install.sh | bash
 RUN mv /tx /usr/bin/
