@@ -1,5 +1,5 @@
 # build-environment
 
-Dockerfile for the Docker environment used to build Azahar binaries and perform other CI/CD tasks.
+Dockerfile for the Docker environment used to build Eden's binaries and perform other CI/CD tasks.
 
-https://hub.docker.com/r/opensauce04/azahar-build-environment
+https://hub.docker.com/r/icybriar/eden-build-environment
