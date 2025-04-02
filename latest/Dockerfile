@@ -50,7 +50,10 @@ RUN apt-get install -y \
     glslang-tools \
     # Other libraries
     libsdl2-dev \
-    libva-dev
+    libva-dev \
+    libssl-dev \
+    autoconf \
+    libtool
 
 # Create Clang symlinks
 RUN ln -s /usr/bin/clang-19 /usr/bin/clang
