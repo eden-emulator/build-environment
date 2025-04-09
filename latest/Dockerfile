@@ -53,7 +53,8 @@ RUN apt-get install -y \
     libva-dev \
     libssl-dev \
     autoconf \
-    libtool
+    libtool \
+    patchelf
 
 # Create Clang symlinks
 RUN ln -s /usr/bin/clang-19 /usr/bin/clang
